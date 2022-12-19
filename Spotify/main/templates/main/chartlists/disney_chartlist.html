@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/foryou_chartlist.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney - Chartlist</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="header_container">
+                <a href="{% url 'home' %}" class="icon_main_header_container">
+                    <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/logos/default-small.svg" alt="">
+                    <h1>Mistakes</h1>
+                </a>
+                <div class="page_catalogs_main_header_container">
+                    <div class="home_page_catalogs self_page_catalog">
+                        <a href="{% url 'home' %}" class="home_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw home-active-icon" viewBox="0 0 24 24">
+                                <path d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z"></path>
+                            </svg>
+                            <h1>Home</h1>
+                        </a>
+                    </div>
+                    <div class="search_page_catalogs self_page_catalog">
+                        <a href="{% url 'search' %}" class="search_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw search-icon" viewBox="0 0 24 24">
+                                <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path>
+                            </svg>
+                            <h1>Search</h1>
+                        </a>
+                    </div>
+                    <div class="my_library_page_catalogs self_page_catalog">
+                        <a href="{% url 'my_library' %}" class="my_library_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw collection-icon" viewBox="0 0 24 24">
+                                <path d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z"></path>
+                            </svg>
+                            <h1>My library</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="my_functions_main_header_container">
+                    <h1><a href="{% url 'my_songs_playlist' %}">My songs</a></h1>
+                </div>
+            </div>
+
+        </header>
+
+        <section>
+
+            <div class="section_header_block">
+                <div class="profile_section_header_block">
+                    <div class="profile_block_section_header" id="profile_block_section_header">
+                        <div class="profile_icon_block">
+                            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                <path d="M6.233.371a4.388 4.388 0 015.002 1.052c.421.459.713.992.904 1.554.143.421.263 1.173.22 1.894-.078 1.322-.638 2.408-1.399 3.316l-.127.152a.75.75 0 00.201 1.13l2.209 1.275a4.75 4.75 0 012.375 4.114V16H.382v-1.143a4.75 4.75 0 012.375-4.113l2.209-1.275a.75.75 0 00.201-1.13l-.126-.152c-.761-.908-1.322-1.994-1.4-3.316-.043-.721.077-1.473.22-1.894a4.346 4.346 0 01.904-1.554c.411-.448.91-.807 1.468-1.052zM8 1.5a2.888 2.888 0 00-2.13.937 2.85 2.85 0 00-.588 1.022c-.077.226-.175.783-.143 1.323.054.921.44 1.712 1.051 2.442l.002.001.127.153a2.25 2.25 0 01-.603 3.39l-2.209 1.275A3.25 3.25 0 001.902 14.5h12.196a3.25 3.25 0 00-1.605-2.457l-2.209-1.275a2.25 2.25 0 01-.603-3.39l.127-.153.002-.001c.612-.73.997-1.52 1.052-2.442.032-.54-.067-1.097-.144-1.323a2.85 2.85 0 00-.588-1.022A2.888 2.888 0 008 1.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="profile_username_blcok">
+                            {{ user.username }}
+                        </div>
+                        <div class="profile_open_block">
+                            <svg role="img" height="16" width="16" fill="#FFF" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw eAXFT6yvz37fvS1lmt6k" viewBox="0 0 16 16">
+                                <path d="M14 6l-6 6-6-6h12z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profile_detail_section_header_block" id="profile_detail_section_header_block">
+                        <a href="{% url 'my_profile' %}">Profile</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_container" style="background-color: rgb(13, 114, 234);">
+                <div class="main_info_about_playlist_block">
+                    <div class="img_block_about_playlist">
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf89f004e1bf07dca45ce9c64c" alt="">
+                    </div>
+                    <div class="description_block_about_playlist">
+                        <h2>Chartlist</h2>
+                        <h1>Disney</h1>
+                        <div class="info_about_description_playlist">
+                            <h1>Spotify</h1>
+                            <span>•</span>
+                            <p class="count-track"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="musics_player_container_block">
+                <div class="play_music_button" id="play_music" onclick="playpauseTrack()">
+                    <i class="play_playlist" id="play_playlist">
+                        <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 uPxdw">
+                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
+                        </svg>
+                    </i>
+                    <i class="pause_playlist" id="pause_playlist">
+                        <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 uPxdw">
+                            <path d="M5.7 3a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7H5.7zm10 0a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7h-2.6z"></path>
+                        </svg>
+                    </i>
+                </div>
+                <div class="title_column_about_musics_block">
+                    <span class="number_column">#</span>
+                    <span class="title_column">Title</span>
+                    <span class="album_column">Album</span>
+                    <span class="time_icon_column">
+                        <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                            <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z"></path>
+                            <path d="M8 3.25a.75.75 0 01.75.75v3.25H11a.75.75 0 010 1.5H7.25V4A.75.75 0 018 3.25z"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="hr"></div>
+                <div class="musics_block">
+                    <div class="music_block">
+                        <div class="play_number_music_block">
+                            <p class="numeric_music">1</p>
+                        </div>
+                        <div class="img_music_block" style="background-image: url('https://i.scdn.co/image/ab67616d00001e021931e871b553e94fe78a6cfa');"></div>
+                        <div class="main_info_music_block">
+                            <h1>Вечеринка</h1>
+                            <p>Скриптонит</p>
+                        </div>
+                        <div class="album_music_block">
+                            Дом с нормальными явлениями
+                        </div>
+                        <div class="time_duration_music_block">
+                            <p>4:12</p>
+                        </div>
+                    </div>
+
+                    <div class="music_block">
+                        <div class="play_number_music_block">
+                            <p class="numeric_music">2</p>
+                        </div>
+                        <div class="img_music_block" style="background-image: url('https://i.scdn.co/image/ab67616d00001e021de3058124936bc563d5a309');"></div>
+                        <div class="main_info_music_block">
+                            <h1>Положение</h1>
+                            <p>Скриптонит</p>
+                        </div>
+                        <div class="album_music_block">
+                            Уроборос: Улица 36
+                        </div>
+                        <div class="time_duration_music_block">
+                            <p>4:42</p>
+                        </div>
+                    </div>
+
+                    <div class="music_block">
+                        <div class="play_number_music_block">
+                            <p class="numeric_music">3</p>
+                        </div>
+                        <div class="img_music_block" style="background-image: url('https://i.scdn.co/image/ab67616d00001e0256ac7b86e090f307e218e9c8');"></div>
+                        <div class="main_info_music_block">
+                            <h1>fake smile</h1>
+                            <p>Ariana Grande</p>
+                        </div>
+                        <div class="album_music_block">
+                            thank u, next
+                        </div>
+                        <div class="time_duration_music_block">
+                            <p>3:28</p>
+                        </div>
+                    </div>
+
+                    <div class="music_block">
+                        <div class="play_number_music_block">
+                            <p class="numeric_music">4</p>
+                        </div>
+                        <div class="img_music_block" style="background-image: url('https://i.scdn.co/image/ab67616d00001e021895052324f123becdd0d53d');"></div>
+                        <div class="main_info_music_block">
+                            <h1>How You Like That</h1>
+                            <p>BLACKPINK</p>
+                        </div>
+                        <div class="album_music_block">
+                            THE ALBUM
+                        </div>
+                        <div class="time_duration_music_block">
+                            <p>3:01</p>
+                        </div>
+                    </div>
+
+                    <div class="music_block">
+                        <div class="play_number_music_block">
+                            <p class="numeric_music">5</p>
+                        </div>
+                        <div class="img_music_block" style="background-image: url('https://i.scdn.co/image/ab67616d00001e02bba7cfaf7c59ff0898acba1f');"></div>
+                        <div class="main_info_music_block">
+                            <h1>Losses</h1>
+                            <p>Drake</p>
+                        </div>
+                        <div class="album_music_block">
+                            Dark Lane Demo Tapes
+                        </div>
+                        <div class="time_duration_music_block">
+                            <p>3:28</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <div class="footer_music_play_container_block">
+            <div class="main_footer_music_player_block">
+                <div class="main_info_about_music_player_block">
+                    <div class="img_block_about_music_player track-art" style="background-image: url('https://i.scdn.co/image/ab67616d00001e0226f7f19c7f0381e56156c94a');"></div>
+                    <div class="title_info_about_music_player">
+                        <h1 class="track-name">Track Name</h1>
+                        <p class="track-artist">Track Artist</p>
+                    </div>
+                </div>
+                <div class="main_player_music_block">
+                    <div class="main_play_pause_player_music_block">
+                        <div class="random-track" onclick="randomTrack()">
+                            <i title="random" class="random-icon">
+                                <svg role="img" height="16" width="16" fill="#a7a7a7" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 00.39 3.5z"></path>
+                                    <path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 11-1.06-1.06L13.109 13H11.16a3.75 3.75 0 01-2.873-1.34l-.787-.938z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                        <div class="prev-track" onclick="prevTrack()">
+                            <i>
+                                <svg role="img" height="16" width="16" fill="#a7a7a7" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M3.3 1a.7.7 0 01.7.7v5.15l9.95-5.744a.7.7 0 011.05.606v12.575a.7.7 0 01-1.05.607L4 9.149V14.3a.7.7 0 01-.7.7H1.7a.7.7 0 01-.7-.7V1.7a.7.7 0 01.7-.7h1.6z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                        <div class="playpause-track" onclick="playpauseTrack()">
+                            <i class="play_playlist" id="music_play_playlist">
+                                <svg role="img" height="18" width="18" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path>
+                                </svg>
+                            </i>
+                            <i class="pause_playlist" id="music_pause_playlist">
+                                <svg role="img" height="18" width="18" aria-hidden="true" viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M5.7 3a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7H5.7zm10 0a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7h-2.6z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                        <div class="next-track" onclick="nextTrack()">
+                            <i>
+                                <svg role="img" height="16" width="16" fill="#a7a7a7" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M12.7 1a.7.7 0 00-.7.7v5.15L2.05 1.107A.7.7 0 001 1.712v12.575a.7.7 0 001.05.607L12 9.149V14.3a.7.7 0 00.7.7h1.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7h-1.6z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                        <div class="repeat-track" onclick="repeatTrack()">
+                            <i title="repeat">
+                                <svg role="img" height="16" width="16" fill="#a7a7a7" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                    <path d="M0 4.75A3.75 3.75 0 013.75 1h8.5A3.75 3.75 0 0116 4.75v5a3.75 3.75 0 01-3.75 3.75H9.81l1.018 1.018a.75.75 0 11-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 111.06 1.06L9.811 12h2.439a2.25 2.25 0 002.25-2.25v-5a2.25 2.25 0 00-2.25-2.25h-8.5A2.25 2.25 0 001.5 4.75v5A2.25 2.25 0 003.75 12H5v1.5H3.75A3.75 3.75 0 010 9.75v-5z"></path>
+                                </svg>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="time_duration_player_music_block">
+                        <div class="current-time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                        <div class="total-duration">00:00</div>
+                    </div>
+                </div>
+                <div class="volume_music_play_block">
+                    <i id="volume-icon">
+                        <svg role="presentation" height="16" width="16" fill="#a7a7a7" aria-hidden="true" aria-label="Высокая громкость" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                            <path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75 0zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 010 4.88z"></path>
+                            <path d="M11.5 13.614a5.752 5.752 0 000-11.228v1.55a4.252 4.252 0 010 8.127v1.55z"></path>
+                        </svg>
+                    </i>
+                    <input type="range" min="0" max="100" value="50" class="volume_slider" onchange="setVolume()">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let track_art = document.querySelector('.track-art');
+        let track_name = document.querySelector('.track-name');
+        let track_artist = document.querySelector('.track-artist');
+        let count_track = document.querySelector('.count-track');
+        let duration_track = document.querySelector('.duration-track');
+
+        let pauseBtnTrack = document.getElementById('pause_playlist');
+        let playBtnTrack = document.getElementById('play_playlist');
+        let musicPlayBtn = document.getElementById('music_play_playlist');
+        let musicPauseBtn = document.getElementById('music_pause_playlist');
+        let playpause_btn = document.querySelector('.playpause-track');
+        let next_btn = document.querySelector('.next-track');
+        let prev_btn = document.querySelector('.prev-track');
+
+        let seek_slider = document.querySelector('.seek_slider');
+        let volume_slider = document.querySelector('.volume_slider');
+        let volumeIcon = document.querySelector('#volume-icon');
+        let curr_time = document.querySelector('.current-time');
+        let total_duration = document.querySelector('.total-duration');
+        let randomIcon = document.querySelector('.random-icon');
+        let curr_track = document.createElement('audio');
+
+        let track_index = 0;
+        let isPlaying = false;
+        let isRandom = false;
+        let updateTimer;
+
+
+        const music_list = [
+
+            {
+                img: 'https://i.scdn.co/image/ab67616d00001e021931e871b553e94fe78a6cfa',
+                name: 'Вечеринка',
+                artist: 'Скриптонит',
+                music: "{% static 'main/musics/Скриптонит_-_Вечеринка.mp3' %}"
+            },
+
+            {
+                img: 'https://i.scdn.co/image/ab67616d00001e021de3058124936bc563d5a309',
+                name: 'Положение',
+                artist: 'Скриптонит',
+                music: "{% static 'main/musics/Скриптонит_-_Положение.mp3' %}"
+            },
+
+            {
+                img: 'https://i.scdn.co/image/ab67616d00001e0256ac7b86e090f307e218e9c8',
+                name: 'fake smile',
+                artist: 'Ariana Grande',
+                music: "{% static 'main/musics/Ariana_Grande_-_fake_smile.mp3' %}"
+            },
+
+            {
+                img: 'https://i.scdn.co/image/ab67616d00001e021895052324f123becdd0d53d',
+                name: 'How You Like That',
+                artist: 'BLACKPINK',
+                music: "{% static 'main/musics/BLACKPINK_-_How_You_Like_That.mp3' %}"
+            },
+
+            {
+                img: 'https://i.scdn.co/image/ab67616d00001e02bba7cfaf7c59ff0898acba1f',
+                name: 'Losses',
+                artist: 'Drake',
+                music: "{% static 'main/musics/Ariana_Grande_-_fake_smile.mp3' %}"
+            }
+
+        ]
+
+        count_track.innerHTML = music_list.length + " tracks";
+
+
+        loadTrack(track_index);
+
+
+        function loadTrack(track_index) {
+            clearInterval(updateTimer);
+            reset();
+
+            curr_track.src = music_list[track_index].music;
+            curr_track.load();
+            track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
+            track_name.textContent = music_list[track_index].name;
+            track_artist.textContent = music_list[track_index].artist;
+
+            updateTimer = setInterval(setUpdate, 1000);
+
+            curr_track.addEventListener("ended", nextTrack);
+        }
+
+
+        function reset() {
+            curr_time.textContent = "00:00";
+            total_duration.textContent = "00:00";
+            seek_slider.value = 0;
+        }
+
+
+        function randomTrack() {
+            isRandom ? pauseRandom() : playRandom();
+        }
+
+
+        function playRandom() {
+            isRandom = true;
+            randomIcon.innerHTML = '<svg role="img" height="16" width="16" fill="#1abc54" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 00.39 3.5z"></path><path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 11-1.06-1.06L13.109 13H11.16a3.75 3.75 0 01-2.873-1.34l-.787-.938z"></path></svg>';
+        }
+
+
+        function pauseRandom(){
+            isRandom = false;
+            randomIcon.innerHTML = '<svg role="img" height="16" width="16" fill="#7a7a7a" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 00.39 3.5z"></path><path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 11-1.06-1.06L13.109 13H11.16a3.75 3.75 0 01-2.873-1.34l-.787-.938z"></path></svg>';
+        }
+
+
+        function repeatTrack(){
+            let current_index = track_index;
+            loadTrack(current_index);
+            playTrack();
+        }
+
+
+        function playpauseTrack(){
+            isPlaying ? pauseTrack() : playTrack();
+        }
+
+
+        function playTrack(){
+            curr_track.play();
+            isPlaying = true;
+            playBtnTrack.style.display = "none";
+            musicPlayBtn.style.display = "none";
+            pauseBtnTrack.style.display = "block";
+            musicPauseBtn.style.display = "block";
+        }
+
+
+        function pauseTrack(){
+            curr_track.pause();
+            isPlaying = false;
+            playBtnTrack.style.display = "block";
+            musicPlayBtn.style.display = "block";
+            pauseBtnTrack.style.display = "none";
+            musicPauseBtn.style.display = "none";
+        }
+
+
+        function nextTrack(){
+            if(track_index < music_list.length - 1 && isRandom === false){
+                track_index += 1;
+            }else if(track_index < music_list.length - 1 && isRandom === true){
+                let random_index = Number.parseInt(Math.random() * music_list.length);
+                track_index = random_index;
+            }else{
+                track_index = 0;
+            }
+            loadTrack(track_index);
+            playTrack();
+        }
+
+
+        function prevTrack(){
+            if(track_index > 0){
+                track_index -= 1;
+            }else{
+                track_index = music_list.length -1;
+            }
+            loadTrack(track_index);
+            playTrack();
+        }
+
+
+        function seekTo(){
+            let seekto = curr_track.duration * (seek_slider.value / 100);
+            curr_track.currentTime = seekto;
+        }
+
+
+        function setVolume(){
+            curr_track.volume = volume_slider.value / 100;
+            if (curr_track.volume == 0) {
+                volumeIcon.innerHTML = '<svg role="presentation" height="16" width="16" fill="#a7a7a7" aria-hidden="true" aria-label="Без звука" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw"><path d="M13.86 5.47a.75.75 0 00-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 008.8 6.53L10.269 8l-1.47 1.47a.75.75 0 101.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 001.06-1.06L12.39 8l1.47-1.47a.75.75 0 000-1.06z"></path><path d="M10.116 1.5A.75.75 0 008.991.85l-6.925 4a3.642 3.642 0 00-1.33 4.967 3.639 3.639 0 001.33 1.332l6.925 4a.75.75 0 001.125-.649v-1.906a4.73 4.73 0 01-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 01-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z"></path></svg>';
+            }
+            else {
+                volumeIcon.innerHTML = '<svg role="presentation" height="16" width="16" fill="#a7a7a7" aria-hidden="true" aria-label="Высокая громкость" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw"><path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75 0zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 010 4.88z"></path><path d="M11.5 13.614a5.752 5.752 0 000-11.228v1.55a4.252 4.252 0 010 8.127v1.55z"></path></svg>'
+            }
+        }
+
+        function setUpdate(){
+            let seekPosition = 0;
+            if(!isNaN(curr_track.duration)){
+                seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+                seek_slider.value = seekPosition;
+
+                let currentMinutes = Math.floor(curr_track.currentTime / 60);
+                let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+                let durationMinutes = Math.floor(curr_track.duration / 60);
+                let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+                if(currentSeconds < 10) {currentSeconds = "0" + currentSeconds; }
+                if(durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+                if(currentMinutes < 10) {currentMinutes = "0" + currentMinutes; }
+                if(durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+                curr_time.textContent = currentMinutes + ":" + currentSeconds;
+                total_duration.textContent = durationMinutes + ":" + durationSeconds;
+            }
+        }
+    </script>
+
+    <script src="{% static 'main/js/profile_block.js' %}"></script>
+</body>
+</html>
