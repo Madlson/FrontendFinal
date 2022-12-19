@@ -27,4 +27,14 @@ urlpatterns = [
     path('chartlists/disney', views.disneyChartlist, name='disney_chartlist'),
     path('chartlists/netflix', views.netflixChartlist, name='netflix_chartlist'),
     path('chartlists/classic', views.classicChartlist, name='classic_chartlist'),
+
+    path('artists/gorillaz', views.gorillazArtist, name='gorillaz_artist'),
+    path('artists/6ix9ine', views.sixNineArtist, name='sixnine_artist'),
+    path('artists/skriptonite', views.skriptoniteArtist, name='skriptonite_artist'),
+    path('artists/ariana-grande', views.arianaGrandeArtist, name='ariana_grande_artist'),
+    path('artists/feduk', views.fedukArtist, name='feduk_artist'),
+    path('artists/drake', views.drakeArtist, name='drake_artist'),
+    path('artists/justin-bieber', views.justinBieberArtist, name='justin_bieber_artist'),
+    path('artists/pharaoh', views.pharaohArtist, name='pharaoh_artist'),
+
 ]

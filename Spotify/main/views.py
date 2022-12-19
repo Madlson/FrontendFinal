@@ -87,3 +87,35 @@ def netflixChartlist(request):
 
 def classicChartlist(request):
     return render(request, 'main/chartlists/classic_chartlist.html')
+
+
+def gorillazArtist(request):
+    return render(request, 'main/artists/gorillaz_artist.html')
+
+
+def sixNineArtist(request):
+    return render(request, 'main/artists/sixnine_artist.html')
+
+
+def skriptoniteArtist(request):
+    return render(request, 'main/artists/skriptonite_artist.html')
+
+
+def arianaGrandeArtist(request):
+    return render(request, 'main/artists/ariana_grande_artist.html')
+
+
+def fedukArtist(request):
+    return render(request, 'main/artists/feduk_artist.html')
+
+
+def drakeArtist(request):
+    return render(request, 'main/artists/drake_artist.html')
+
+
+def justinBieberArtist(request):
+    return render(request, 'main/artists/justin_bieber_artist.html')
+
+
+def pharaohArtist(request):
+    return render(request, 'main/artists/pharaoh_artist.html')
