@@ -12,4 +12,7 @@ urlpatterns = [
     path('selections/flashback', views.flashbackSelections, name='flashback'),
 
     path('playlists/mysongs', views.mySongsPlaylist, name='my_songs_playlist'),
+
+    path('chartlists/for-you', views.foryouChartlist, name='for_you_chartlist'),
+    path('chartlists/new-releases', views.newreleasesChartlist, name='new_releases_chartlist'),
 ]

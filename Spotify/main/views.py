@@ -31,3 +31,11 @@ def flashbackSelections(request):
 
 def mySongsPlaylist(request):
     return render(request, 'main/playlists/mysongs_playlist.html')
+
+
+def foryouChartlist(request):
+    return render(request, 'main/chartlists/foryou_chartlist.html')
+
+
+def newreleasesChartlist(request):
+    return render(request, 'main/chartlists/newreleases_chartlist.html')
