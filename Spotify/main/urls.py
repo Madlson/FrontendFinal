@@ -9,4 +9,7 @@ urlpatterns = [
 
     path('selections/on-repeat', views.onRepeatSelections, name='on_repeat'),
     path('selections/time-capsule', views.timeCapsuleSelections, name='time_capsule'),
+    path('selections/flashback', views.flashbackSelections, name='flashback'),
+
+    path('playlists/mysongs', views.mySongsPlaylist, name='my_songs_playlist'),
 ]

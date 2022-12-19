@@ -23,3 +23,11 @@ def onRepeatSelections(request):
 
 def timeCapsuleSelections(request):
     return render(request, 'main/personal_selections/time_capsule.html')
+
+
+def flashbackSelections(request):
+    return render(request, 'main/personal_selections/flashback.html')
+
+
+def mySongsPlaylist(request):
+    return render(request, 'main/playlists/mysongs_playlist.html')
