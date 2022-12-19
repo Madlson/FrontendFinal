@@ -1,0 +1,235 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+a {
+    color: #4B0082;
+    text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+    font-family: Inter, Helvetica, "sans-serif";
+}
+
+
+/* GET STARTED */
+
+
+.container {
+    display: flex;
+}
+
+
+
+/* ========== HEADER BLOCK ========== */
+
+
+
+header {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+}
+
+.header_container {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+}
+
+.icon_main_header_container {
+    display: flex;
+    align-items: center;
+}
+
+.icon_main_header_container img {
+    width: 36px;
+}
+
+.icon_main_header_container h1 {
+    color: #FFF;
+    font-size: 20px;
+    margin-left: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.page_catalogs_main_header_container {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.self_page_catalog a {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.self_page_catalog a svg {
+    fill: #b3b3b3;
+}
+
+.self_page_catalog a h1 {
+    color: #b3b3b3;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.self_page_catalog a:hover h1, .self_page_catalog a:hover svg {
+    color: #FFF;
+    fill: #FFF;
+}
+
+.my_library_page svg {
+    fill: #FFF !important;
+}
+
+.my_library_page h1 {
+    color: #FFF !important;
+}
+
+.hr {
+    height: 1px;
+    width: 100%;
+    background-color: #5c5c5c;
+}
+
+.my_functions_main_header_container {
+    margin-top: 40px;
+}
+
+.my_functions_main_header_container h1 {
+    margin: 15px 0;
+}
+
+.my_functions_main_header_container h1 a {
+    color: #b3b3b3;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.my_functions_main_header_container h1 a:hover {
+    color: #FFF;
+}
+
+
+
+/* ========== SECTION BLOCK ========== */
+
+
+
+section {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    background-color: #1a1a1a;
+}
+
+.section_header_block {
+    width: calc(100% - 240px);
+    position: fixed;
+    background-color: #121212;
+    padding: 15px 30px;
+}
+
+.profile_section_header_block {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 70px 0 0;
+}
+
+.profile_block_section_header {
+    display: inline-flex;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #FFF;
+    padding: 2px 5px 2px 2px;
+    border-radius: 23px;
+    cursor: pointer;
+}
+
+.profile_block_section_header:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile_icon_block {
+    fill: #FFF;
+    background-color: #5c5c5c;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+}
+
+.profile_username_blcok {
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0 5px 0 10px;
+}
+
+.profile_detail_section_header_block {
+    display: none;
+    margin: 40px 0 0 0;
+    position: absolute;
+    background-color: #1abc54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile_detail_section_header_block a {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.profile_detail_section_header_block a:hover {
+    text-decoration: underline;
+}

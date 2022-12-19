@@ -7,3 +7,11 @@ def mainPage(request):
 
 def searchPage(request):
     return render(request, 'main/search.html')
+
+
+def myLibrary(request):
+    return render(request, 'main/mylibrary.html')
+
+
+def myProfile(request):
+    return render(request, 'main/myprofile.html')
