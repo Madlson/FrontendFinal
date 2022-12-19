@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'main/css/search.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistakes - Search</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="header_container">
+                <a href="{% url 'home' %}" class="icon_main_header_container">
+                    <img src="https://preview.keenthemes.com/metronic8/demo16/assets/media/logos/default-small.svg" alt="">
+                    <h1>Mistakes</h1>
+                </a>
+                <div class="page_catalogs_main_header_container">
+                    <div class="home_page_catalogs self_page_catalog">
+                        <a href="{% url 'home' %}" class="home_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw home-active-icon" viewBox="0 0 24 24">
+                                <path d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z"></path>
+                            </svg>
+                            <h1>Home</h1>
+                        </a>
+                    </div>
+                    <div class="search_page_catalogs self_page_catalog">
+                        <a href="{% url 'search' %}" class="search_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw search-icon" viewBox="0 0 24 24">
+                                <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path>
+                            </svg>
+                            <h1>Search</h1>
+                        </a>
+                    </div>
+                    <div class="my_library_page_catalogs self_page_catalog">
+                        <a href="{% url 'my_library' %}" class="my_library_page">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw collection-icon" viewBox="0 0 24 24">
+                                <path d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z"></path>
+                            </svg>
+                            <h1>My library</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="hr"></div>
+                <div class="my_functions_main_header_container">
+                    <h1><a href="{% url 'my_songs_playlist' %}">My songs</a></h1>
+                </div>
+            </div>
+
+        </header>
+
+        <section>
+
+            <div class="section_header_block">
+                <div class="search_seaction_header_block">
+                    <div class="search_block_section_header">
+                        <i class="search_icon_block">
+                            <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw mOLTJ2mxkzHJj6Y9_na_" viewBox="0 0 24 24">
+                                <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path>
+                            </svg>
+                        </i>
+                        <input type="text" name="search" class="search_input_block" id="search-input" onInput="searchInput()" autocomplete="off">
+                    </div>
+                </div>
+                <div class="profile_section_header_block">
+                    <div class="profile_block_section_header" id="profile_block_section_header">
+                        <div class="profile_icon_block">
+                            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 uPxdw">
+                                <path d="M6.233.371a4.388 4.388 0 015.002 1.052c.421.459.713.992.904 1.554.143.421.263 1.173.22 1.894-.078 1.322-.638 2.408-1.399 3.316l-.127.152a.75.75 0 00.201 1.13l2.209 1.275a4.75 4.75 0 012.375 4.114V16H.382v-1.143a4.75 4.75 0 012.375-4.113l2.209-1.275a.75.75 0 00.201-1.13l-.126-.152c-.761-.908-1.322-1.994-1.4-3.316-.043-.721.077-1.473.22-1.894a4.346 4.346 0 01.904-1.554c.411-.448.91-.807 1.468-1.052zM8 1.5a2.888 2.888 0 00-2.13.937 2.85 2.85 0 00-.588 1.022c-.077.226-.175.783-.143 1.323.054.921.44 1.712 1.051 2.442l.002.001.127.153a2.25 2.25 0 01-.603 3.39l-2.209 1.275A3.25 3.25 0 001.902 14.5h12.196a3.25 3.25 0 00-1.605-2.457l-2.209-1.275a2.25 2.25 0 01-.603-3.39l.127-.153.002-.001c.612-.73.997-1.52 1.052-2.442.032-.54-.067-1.097-.144-1.323a2.85 2.85 0 00-.588-1.022A2.888 2.888 0 008 1.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="profile_username_blcok">
+                            {{ user.username }}
+                        </div>
+                        <div class="profile_open_block">
+                            <svg role="img" height="16" width="16" fill="#FFF" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw eAXFT6yvz37fvS1lmt6k" viewBox="0 0 16 16">
+                                <path d="M14 6l-6 6-6-6h12z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profile_detail_section_header_block" id="profile_detail_section_header_block">
+                        <a href="{% url 'my_profile' %}">Profile</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data_history_of_search_section_block">
+                <div class="title_data_history_of_search">
+                    <h1>Search data</h1>
+                </div>
+                <div class="playlists_data_history_of_search" id="playlist-block">
+                    <h1 class="nothing_found_search_block" id="nothing-found">
+                        Noting found...
+                    </h1>
+                </div>
+            </div>
+
+            <div class="all_the_rest_section_block">
+                <div class="title_all_the_rest_block">
+                    <h1>All the rest</h1>
+                </div>
+                <div class="playlists_all_the_rest_block">
+                    <a href="{% url 'for_you_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(30, 50, 100)">
+                        <h1>For you</h1>
+                        <img src="https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe" alt="">
+                    </a>
+                    <a href="{% url 'new_releases_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(232, 17, 91)">
+                        <h1>New releases</h1>
+                        <img src="https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112" alt="">
+                    </a>
+                    <a href="{% url 'pop_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(20, 138, 8)">
+                        <h1>Pop</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768" alt="">
+                    </a>
+                    <a href="{% url 'hip_hop_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(188, 89, 0)">
+                        <h1>Hip-Hop</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1" alt="">
+                    </a>
+                    <a href="{% url 'dance_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(216, 64, 0)">
+                        <h1>Dance</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005cafdfdaac1cf9574a196ca25196" alt="">
+                    </a>
+                    <a href="{% url 'for_gamers_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(30, 50, 100)">
+                        <h1>For gamers</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf26dd3719e8824756914ae61f" alt="">
+                    </a>
+                    <a href="{% url 'rock_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(233, 17, 41)">
+                        <h1>Rock</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005cafae7e69beb88f16969641b53e" alt="">
+                    </a>
+                    <a href="{% url 'k_pop_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(20, 138, 8)">
+                        <h1>K-Pop</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf013ee3c983e6f60bf28bad5a" alt="">
+                    </a>
+                    <a href="{% url 'relax_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(216, 64, 0)">
+                        <h1>Relax</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf47e942f5bea637f4f4760170" alt="">
+                    </a>
+                    <a href="{% url 'r&b_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(220, 20, 140)">
+                        <h1>R&B</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005cafbe6a6e705e1a71117c2d0c2c" alt="">
+                    </a>
+                    <a href="{% url 'jazz_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(119, 119, 119)">
+                        <h1>Jazz</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005cafe289743024639ea8f202364d" alt="">
+                    </a>
+                    <a href="{% url 'disney_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(13, 114, 234)">
+                        <h1>Disney</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf89f004e1bf07dca45ce9c64c" alt="">
+                    </a>
+                    <a href="{% url 'netflix_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(235, 30, 50)">
+                        <h1>Netflix</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf0b0c71c920d6a745461ada69" alt="">
+                    </a>
+                    <a href="{% url 'classic_chartlist' %}" class="playlist_all_the_rest_block" style="background-color: rgb(125, 75, 50)">
+                        <h1>Classic</h1>
+                        <img src="https://i.scdn.co/image/ab67fb8200005caf12809992dfc5b318892ea07b" alt="">
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+        function searchInput() {
+
+            let searchInput = document.getElementById('search-input').value;
+            let playlist = '';
+            let playlistBlock = document.getElementById('playlist-block');
+            let nothingFound = document.getElementById('nothing-found');
+
+            searchInput = searchInput.trim();
+
+            const chart_list = [
+
+                {
+                    href: "{% url 'for_you_chartlist' %}",
+                    title: 'For you',
+                    img: 'https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe',
+                    bgColor: 'rgb(30, 50, 100)'
+                },
+
+                {
+                    href: "{% url 'new_releases_chartlist' %}",
+                    title: 'New releases',
+                    img: 'https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112',
+                    bgColor: 'rgb(232, 17, 91)'
+                },
+
+                {
+                    href: "{% url 'pop_chartlist' %}",
+                    title: 'Pop',
+                    img: 'https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768',
+                    bgColor: 'rgb(20, 138, 8)'
+                },
+
+                {
+                    href: "{% url 'hip_hop_chartlist' %}",
+                    title: 'Hip-Hop',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf7e11c8413dc33c00740579c1',
+                    bgColor: 'rgb(188, 89, 0)'
+                },
+
+                {
+                    href: "{% url 'dance_chartlist' %}",
+                    title: 'Dance',
+                    img: 'https://i.scdn.co/image/ab67fb8200005cafdfdaac1cf9574a196ca25196',
+                    bgColor: 'rgb(216, 64, 0)'
+                },
+
+                {
+                    href: "{% url 'for_gamers_chartlist' %}",
+                    title: 'For gamers',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf26dd3719e8824756914ae61f',
+                    bgColor: 'rgb(30, 50, 100)'
+                },
+
+                {
+                    href: "{% url 'rock_chartlist' %}",
+                    title: 'Rock',
+                    img: 'https://i.scdn.co/image/ab67fb8200005cafae7e69beb88f16969641b53e',
+                    bgColor: 'rgb(233, 17, 41)'
+                },
+
+                {
+                    href: "{% url 'k_pop_chartlist' %}",
+                    title: 'K-Pop',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf013ee3c983e6f60bf28bad5a',
+                    bgColor: 'rgb(20, 138, 8)'
+                },
+
+                {
+                    href: "{% url 'relax_chartlist' %}",
+                    title: 'Relax',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf47e942f5bea637f4f4760170',
+                    bgColor: 'rgb(216, 64, 0)'
+                },
+
+                {
+                    href: "{% url 'r&b_chartlist' %}",
+                    title: 'R&B',
+                    img: 'https://i.scdn.co/image/ab67fb8200005cafbe6a6e705e1a71117c2d0c2c',
+                    bgColor: 'rgb(220, 20, 140)'
+                },
+
+                {
+                    href: "{% url 'jazz_chartlist' %}",
+                    title: 'Jazz',
+                    img: 'https://i.scdn.co/image/ab67fb8200005cafe289743024639ea8f202364d',
+                    bgColor: 'rgb(119, 119, 119)'
+                },
+
+                {
+                    href: "{% url 'disney_chartlist' %}",
+                    title: 'Disney',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf89f004e1bf07dca45ce9c64c',
+                    bgColor: 'rgb(13, 114, 234)'
+                },
+
+                {
+                    href: "{% url 'netflix_chartlist' %}",
+                    title: 'Netflix',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf0b0c71c920d6a745461ada69',
+                    bgColor: 'rgb(235, 30, 50)'
+                },
+
+                {
+                    href: "{% url 'classic_chartlist' %}",
+                    title: 'Classic',
+                    img: 'https://i.scdn.co/image/ab67fb8200005caf12809992dfc5b318892ea07b',
+                    bgColor: 'rgb(125, 75, 50)'
+                }
+
+            ]
+
+            for(let i = 0; i < chart_list.length; i++) {
+                if (searchInput.toLowerCase() === chart_list[i].title.toLowerCase()) {
+                    playlist = chart_list[i];
+                    playlistBlock.innerHTML += '<a href="' + playlist.href + '" class="playlist_all_the_rest_block" style="background-color: ' + playlist.bgColor + '">' +
+                                              '<h1>' + playlist.title + '</h1>' +
+                                              '<img src="' + playlist.img + '" alt="">'
+                }
+                nothingFound.style.display = 'none';
+            }
+
+        }
+
+    </script>
+
+    <script src="{% static 'main/js/profile_block.js' %}"></script>
+
+</body>
+</html>
