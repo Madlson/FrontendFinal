@@ -15,3 +15,11 @@ def myLibrary(request):
 
 def myProfile(request):
     return render(request, 'main/myprofile.html')
+
+
+def onRepeatSelections(request):
+    return render(request, 'main/personal_selections/on_repeat.html')
+
+
+def timeCapsuleSelections(request):
+    return render(request, 'main/personal_selections/time_capsule.html')
